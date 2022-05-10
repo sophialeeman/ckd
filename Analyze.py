@@ -65,9 +65,15 @@ for row in filereader:
     bp.append(float(row[1]))
     sg.append(float(row[2]))
     al.append(float(row[3]))
-    sug.append(row[4])
-    rbcu.append(row[5])
-    pus.append(row[6])
+    sug.append(float(row[4]))
+    if row[5] == "normal":
+        rbcu.append(0)
+    if row[5] == "abnormal":
+        rbcu.append(1)
+    if row[6] == "normal":
+        pus.append(0)
+    if row[6] == "abnormal":
+        pus.append(1)
     pcc.append(row[7])
     bac.append(row[8])
     bgr.append(row[9])
@@ -98,6 +104,8 @@ print(avage)
 ckdage = sum(age[0:43])/len(age[0:43]) #The first 43 subjects are ckd patients
 print("The average age for CKD patients is:")
 print(ckdage)
+print("The percent change is")
+print((ckdage - avage)/avage * 100)
 #Blood Pressure
 avbp = sum(bp)/len(bp)
 print("The average bp is:")
@@ -105,6 +113,8 @@ print(avbp)
 ckdbp = sum(bp[0:43])/len(bp[0:43])
 print("The average bp for CKD patients is:")
 print(ckdbp)
+print("The percent change is")
+print((ckdbp - avbp)/avbp * 100)
 #Specific Gravity
 avsg = sum(sg)/len(sg)
 print("The average sg is:")
@@ -112,6 +122,8 @@ print(avsg)
 ckdsg = sum(sg[0:43])/len(sg[0:43])
 print("The average sg for CKD patients is:")
 print(ckdsg)
+print("The percent change is")
+print((ckdsg - avsg)/avsg * 100)
 #Albumin
 aval = sum(al)/len(al)
 print("The average al is:")
@@ -119,4 +131,36 @@ print(aval)
 ckdal = sum(al[0:43])/len(al[0:43])
 print("The average al for CKD patients is:")
 print(ckdal) 
+print("The percent change is")
+print((ckdal - aval)/aval * 100)
 #This shows the first striking difference, which is expected since Albuminuria is one of the main symptoms of CKD
+#Sugar
+avsug = sum(sug)/len(sug)
+print("The average sug is:")
+print(avsug)
+ckdsug = sum(sug[0:43])/len(sug[0:43])
+print("The average sug for CKD patients is:")
+print(ckdsug)
+print("The percent change is")
+print((ckdsug - avsug)/avsug * 100)
+#The same percent change as Albumin, which is quite interesting.
+#Red Blood Cells in Urine
+avrbcu = sum(rbcu)/len(rbcu)
+print("The average rbcu is:")
+print(avrbcu)
+ckdrbcu = sum(rbcu[0:43])/len(rbcu[0:43])
+print("The average rbcu for CKD patients is:")
+print(ckdrbcu)
+print("The percent change is")
+print((ckdrbcu - avrbcu)/avrbcu * 100)
+#The same percent change as Albumin and Sugar, which is quite interesting. This may be too much of a coincidence
+#Pus Cells in Urine
+avpus = sum(pus)/len(pus)
+print("The average pus is:")
+print(avpus)
+ckdpus = sum(pus[0:43])/len(pus[0:43])
+print("The average pus for CKD patients is:")
+print(ckdpus)
+print("The percent change is")
+print((ckdpus - avpus)/avpus * 100)
+#Same percent change as Albumin, Sugar, and RBC.
