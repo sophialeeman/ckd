@@ -91,13 +91,31 @@ for row in filereader:
     pcv.append(float(row[15]))
     wbc.append(float(row[16]))
     rbc.append(float(row[17]))
-    hyp.append(row[18])
-    dia.append(row[19])
-    cad.append(row[20])
-    app.append(row[21])
-    ed.append(row[22])
-    an.append(row[23])
-    ckd.append(row[24])
+    if row[18] == "no":
+        hyp.append(0)
+    if row[18] == "yes":
+        hyp.append(1)
+    if row[19] == "no":
+        dia.append(0)
+    if row[19] == "yes":
+        dia.append(1)
+    if row[20] == "no":
+        cad.append(0)
+    if row[20] == "yes":
+        cad.append(1)
+    if row[21] == "good":
+        app.append(0)
+    if row[21] == "poor":
+        app.append(1)
+    if row[22] == "no":
+        ed.append(0)
+    if row[22] == "yes":
+        ed.append(1)
+    if row[23] == "no":
+        an.append(0)
+    if row[23] == "yes":
+        an.append(1)
+    ckd.append(float(row[24]))
       
 file.close()
 
