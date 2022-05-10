@@ -293,3 +293,67 @@ print("The average rbc for CKD patients is:")
 print(ckdrbc)
 print("The percent change is")
 print((ckdrbc - avrbc)/avrbc * 100)
+#Hypertension
+avhyp = sum(hyp)/len(hyp)
+print("The average hyp is:")
+print(avhyp)
+ckdhyp = sum(hyp[0:43])/len(hyp[0:43])
+print("The average hyp for CKD patients is:")
+print(ckdhyp)
+print("The percent change is")
+print((ckdhyp - avhyp)/avhyp * 100)
+#Same as al, sug, rbcu, pus, pcc, and bac
+#Diabetes
+avdia = sum(dia)/len(dia)
+print("The average dia is:")
+print(avdia)
+ckddia = sum(dia[0:43])/len(dia[0:43])
+print("The average dia for CKD patients is:")
+print(ckddia)
+print("The percent change is")
+print((ckddia - avdia)/avdia * 100)
+#Same as al, sug, rbcu, pus, pcc, bac, and hyp
+#Coronary Artery Disease
+avcad = sum(cad)/len(cad)
+print("The average cad is:")
+print(avcad)
+ckdcad = sum(cad[0:43])/len(cad[0:43])
+print("The average cad for CKD patients is:")
+print(ckdcad)
+print("The percent change is")
+print((ckdcad - avcad)/avcad * 100)
+#Same as al, sug, rbcu, pus, pcc, bac, hyp, and dia. This is way too much of a coincidence.
+#Appetite
+avapp = sum(app)/len(app)
+print("The average app is:")
+print(avapp)
+ckdapp = sum(app[0:43])/len(app[0:43])
+print("The average app for CKD patients is:")
+print(ckdapp)
+print("The percent change is")
+print((ckdapp - avapp)/avapp * 100)
+#Same as al, sug, rbcu, pus, pcc, bac, hyp, dia, and cad.
+#Pedal Edema
+aved = sum(ed)/len(ed)
+print("The average ed is:")
+print(aved)
+ckded = sum(ed[0:43])/len(ed[0:43])
+print("The average ed for CKD patients is:")
+print(ckded)
+print("The percent change is")
+print((ckded - aved)/aved * 100)
+#Same as al, sug, rbcu, pus, pcc, bac, hyp, dia, cad, and app.
+#Anemia
+avan = sum(an)/len(an)
+print("The average an is:")
+print(avan)
+ckdan = sum(an[0:43])/len(an[0:43])
+print("The average an for CKD patients is:")
+print(ckdan)
+print("The percent change is")
+print((ckdan - avan)/avan * 100)
+#Same as al, sug, rbcu, pus, pcc, bac, hyp, dia, cad, app, and an.
+#Rate of ckd
+avckd = sum(ckd)/len(ckd)
+print("The average ckd is:")
+print(avckd)
