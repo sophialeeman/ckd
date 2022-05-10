@@ -61,7 +61,7 @@ an = []
 ckd = []
 #Assigning data
 for row in filereader:
-    age.append(row[0])
+    age.append(float(row[0]))
     bp.append(row[1])
     sg.append(row[2])
     al.append(row[3])
@@ -86,8 +86,11 @@ for row in filereader:
     ed.append(row[22])
     an.append(row[23])
     ckd.append(row[24])
-    
-
-    
-    
+      
 file.close()
+
+#Calculating Averages for Each Header Across the Whole Data Set and for CKD Patients Only
+#Average Age Across Data Set
+avage = sum(age)/len(age)
+#Average Age of CKD Patients
+ckdage = sum(age[0:43])/len(age[0:43]) #The first 43 subjects are ckd patients
